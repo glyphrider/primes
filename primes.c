@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <math.h>
 
 int parse_commandline(int argc, char *argv[])
 {
@@ -11,7 +11,7 @@ int parse_commandline(int argc, char *argv[])
 
 int is_prime(int candidate)
 {
-  for(int factor = 2; factor < candidate; factor++)
+  for(int factor = 2; factor <= sqrt(candidate); factor++)
     if(candidate % factor == 0)
       return 0;
   return 1;
