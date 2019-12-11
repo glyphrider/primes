@@ -1,7 +1,7 @@
 OBJS := primes.o
 
 primes: $(OBJS)
-	$(CC) -o $@ $^ -lm
+	$(CC) -o $@ $^
 
 .o:.c
 	$(CC) -o $@ -c $^
