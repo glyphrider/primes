@@ -7,4 +7,4 @@ primes: $(OBJS)
 	$(CC) -o $@ -c $^
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) primes
