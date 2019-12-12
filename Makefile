@@ -1,10 +1,10 @@
 OBJS := primes.o
 
 primes: $(OBJS)
-	$(CC) -o $@ $^
+	$(CC) $(LDFLAGS) -o $@ $^
 
-.o:.c
-	$(CC) -o $@ -c $^
+%.o:%.c
+	$(CC) $(CFLAGS) -o $@ -c $^
 
 clean:
 	rm -f $(OBJS) primes
