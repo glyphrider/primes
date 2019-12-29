@@ -30,6 +30,17 @@ int addnode(node **start, node **end, int value)
   (*end)->next = 0;
 }
 
+int cleanup(node* factors)
+{
+  node *temp;
+  while(factors)
+    {
+      temp = factors;
+      factors = factors->next;
+      free(temp);
+    }
+}
+
 int is_prime(int candidate,node *factors)
 {
   for(;factors && factors->factor * factors->factor <= candidate; factors = factors->next)
@@ -60,6 +71,7 @@ int main(int argc, char *argv[])
     if(count == number_to_find) break;
     candidate++;
   }
+  cleanup(factors);
   return 0;
 }
 
